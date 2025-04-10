@@ -1,19 +1,17 @@
 import styles from './Field.module.css'
 
-const FieldLayout = () => {
+const FieldLayout = ({ field }) => {
 	return (
 		<>
 
 			<div className={styles.field}>
-				<button className={styles.cell}></button>
-				<button className={styles.cell}></button>
-				<button className={styles.cell}></button>
-				<button className={styles.cell}></button>
-				<button className={styles.cell}></button>
-				<button className={styles.cell}></button>
-				<button className={styles.cell}></button>
-				<button className={styles.cell}></button>
-				<button className={styles.cell}></button>
+
+				{field.map((cell, index) => (
+					<button key={index} className={styles.cell}>
+						{cell}
+					</button>
+				))}
+
 			</div>
 			<img
 				src="/sprites/Knight1.jpg"
@@ -29,7 +27,7 @@ const FieldLayout = () => {
 	);
 }
 
-export const Field = () => {
+export const Field = ({ field }) => {
 
-	return <FieldLayout />
+	return <FieldLayout field={field} />
 }

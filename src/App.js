@@ -5,14 +5,17 @@ import { Information } from './Information/Information'
 import styles from './app.module.css';
 import { useState } from 'react';
 
-const GameLayout = () => {
+const GameLayout = ({ field, isDraw, isGameEnded ,currentPlayer }) => {
 
 	return (
 		<>
 			<div className={styles.gameZona}>
 				{/* <ScreenSaver /> */}
-				<Field />
-				<Information />
+				<Field field={field} />
+				<Information isDraw={isDraw}
+					isGameEnded={isGameEnded}
+					currentPlayer={currentPlayer}
+				/>
 				<Reset />
 			</div >
 		</>
@@ -28,7 +31,12 @@ export const Game = () => {
 	const [isDraw, setIsDraw] = useState(false);
 	const [field, setField] = useState(Array(9).fill(''));
 
-	return <GameLayout />;
+	return <GameLayout
+		field={field}
+		isDraw={isDraw}
+		isGameEnded={isGameEnded}
+		currentPlayer={currentPlayer}
+		 />;
 
 };
 
