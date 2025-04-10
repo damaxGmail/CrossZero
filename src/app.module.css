@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 .gameZona {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+
 	text-align: center;
 	max-width: 1500px;
 	margin: 0
