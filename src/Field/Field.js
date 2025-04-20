@@ -14,12 +14,12 @@ const FieldLayout = ({ field }) => {
 
 			</div>
 			<img
-				src="/sprites/Knight1.jpg"
+				src="/sprites/Knight1.png"
 				alt="Рыцарь"
 				className={styles.knight}
 			/>
 			<img
-				src="/sprites/dragon-not_Fire.png"
+				src="/sprites/dragon.png"
 				alt="Дракон"
 				className={styles.dragon}
 			/>
