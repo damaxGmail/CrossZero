@@ -2,11 +2,19 @@ import { ScreenSaver } from './ScreenSaver/ScreenSaver'
 import { Reset } from './Reset/Reset'
 import { Field } from './Field/Field'
 import { Information } from './Information/Information'
-import { Effect } from './Effect/Effect'
+
 import styles from './app.module.css';
 import { useState, useEffect } from 'react';
+import { playSound } from './Effect/Effect';
 
-const GameLayout = ({ field, isDraw, isGameEnded, currentPlayer, handleCellClick, onReset, ExitGame,
+const GameLayout = ({
+	field,
+	isDraw,
+	isGameEnded,
+	currentPlayer,
+	handleCellClick,
+	onReset,
+	ExitGame,
 	knightEffectActive,
 	dragonEffectActive }) => {
 
@@ -14,6 +22,7 @@ const GameLayout = ({ field, isDraw, isGameEnded, currentPlayer, handleCellClick
 		<>
 			<div className={styles.gameZona}>
 				{/* <ScreenSaver /> */}
+				{/* Окно заполнения данных для регистрации и валидации */}
 				<Field field={field} onCellClick={handleCellClick} knightEffectActive={knightEffectActive}
 					dragonEffectActive={dragonEffectActive} />
 
@@ -22,6 +31,8 @@ const GameLayout = ({ field, isDraw, isGameEnded, currentPlayer, handleCellClick
 					currentPlayer={currentPlayer}
 				/>
 				<Reset onReset={onReset} ExitGame={ExitGame} />
+				{/* Окно заполнения доп. данных + валидация второго типа*/}
+				{/* Возможно Окно вывода данных якобы прошлых победителей (из БД)*/}
 			</div >
 		</>
 
@@ -50,6 +61,7 @@ export const Game = () => {
 
 	// Обработчик клика по клетке
 	const handleCellClick = (index) => {
+		playSound(currentPlayer, 'move');
 
 		if (field[index] || isGameEnded) return;
 
@@ -90,12 +102,11 @@ export const Game = () => {
 			const three = variantWin[2];
 
 			if (newField[first] === '' || newField[second] === '' || newField[three] === '') {
-
 				continue;
 			}
 			else if (newField[first] === newField[second] && newField[first] === newField[three]) {
 				setIsGameEnded(true);
-
+				playSound(currentPlayer, 'win');
 				return true;
 			}
 
@@ -103,6 +114,7 @@ export const Game = () => {
 			if (!newField.includes('')) {
 				setIsGameEnded(true);
 				setIsDraw(true);
+				playSound(currentPlayer, 'draw');
 				return false;
 			}
 
@@ -117,9 +129,11 @@ export const Game = () => {
 		setIsGameEnded(false);
 		setIsDraw(false);
 		setField(Array(9).fill(''));
+		playSound(currentPlayer, 'click');
 	};
 	const handleExitGame = () => {
 		alert('По данной кнопке будет выходить новое окно со списком победителей (из БД). В рамках следующего ДЗ');
+		playSound(currentPlayer, 'click');
 	}
 
 
@@ -134,7 +148,6 @@ export const Game = () => {
 		knightEffectActive={knightEffectActive}
 		dragonEffectActive={dragonEffectActive}
 	/>;
-
 
 };
 

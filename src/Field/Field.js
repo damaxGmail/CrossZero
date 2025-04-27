@@ -4,11 +4,9 @@ const FieldLayout = ({ field, onCellClick, knightEffectActive, dragonEffectActiv
 
 	return (
 		<>
-
 			<div className={styles.field}>
 
 				{field.map((cell, index) => {
-
 					const cellClass =
 						cell === 'X'
 							? styles.cell_Cross
@@ -42,7 +40,9 @@ const FieldLayout = ({ field, onCellClick, knightEffectActive, dragonEffectActiv
 }
 
 export const Field = ({ field, onCellClick, knightEffectActive, dragonEffectActive }) => {
-
-	return <FieldLayout field={field} onCellClick={onCellClick} knightEffectActive={knightEffectActive}
+	return <FieldLayout
+		field={field}
+		onCellClick={onCellClick}
+		knightEffectActive={knightEffectActive}
 		dragonEffectActive={dragonEffectActive} />
 }
