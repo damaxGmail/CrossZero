@@ -27,7 +27,7 @@ const ScreenSaverLayout = ({ isPressed, showText, handleScreenClick }) => {
 export const ScreenSaver = () => {
 	const [showSaver, setShowSaver] = useState(true);
 	const [isPressed, setIsPressed] = useState(false); // Состояние "нажатия"
-	const [showText, setShowText] = useState(false); // Показывать текст или нет
+	const [showText, setShowText] = useState(true); // Показывать текст или нет
 
 	useEffect(() => {
 		if (showSaver) {
@@ -53,7 +53,6 @@ export const ScreenSaver = () => {
 	// Функция для открытия нового окна регистрации
 	const openRegistrationWindow = () => {
 		alert('Здесь будет открываться окно регистрации');
-
 	};
 
 	// Если заставка скрыта, не рендерим её

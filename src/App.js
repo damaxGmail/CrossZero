@@ -136,7 +136,6 @@ export const Game = () => {
 		playSound(currentPlayer, 'click');
 	}
 
-
 	return <GameLayout
 		field={field}
 		isDraw={isDraw}

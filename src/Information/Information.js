@@ -7,10 +7,14 @@ const InformationLayout = ({ isDraw, isGameEnded, currentPlayer }) => {
 				isDraw ? (
 					<h2 className={style.textGame} > Ничья!</h2>
 				) : (
-					<h2 className={style.textGame}> Победил: {currentPlayer}</h2>
+					<h2 className={style.textGame}> Победил: {
+						currentPlayer === 'X' ? "Рыцарь" : "Дракон"
+					}</h2>
 				)
 			) : (
-				<h2 className={style.textGame} > Ходит: {currentPlayer}</h2>
+				<h2 className={style.textGame} > Ходит: {
+					currentPlayer === 'X' ? "Рыцарь" : "Дракон"
+				}</h2>
 			)}
 		</>
 	);
