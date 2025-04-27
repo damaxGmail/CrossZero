@@ -2,21 +2,26 @@ import { ScreenSaver } from './ScreenSaver/ScreenSaver'
 import { Reset } from './Reset/Reset'
 import { Field } from './Field/Field'
 import { Information } from './Information/Information'
+import { Effect } from './Effect/Effect'
 import styles from './app.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const GameLayout = ({ field, isDraw, isGameEnded, currentPlayer, handleCellClick, onReset }) => {
+const GameLayout = ({ field, isDraw, isGameEnded, currentPlayer, handleCellClick, onReset, ExitGame,
+	knightEffectActive,
+	dragonEffectActive }) => {
 
 	return (
 		<>
 			<div className={styles.gameZona}>
 				{/* <ScreenSaver /> */}
-				<Field field={field} onCellClick={handleCellClick} />
+				<Field field={field} onCellClick={handleCellClick} knightEffectActive={knightEffectActive}
+					dragonEffectActive={dragonEffectActive} />
+
 				<Information isDraw={isDraw}
 					isGameEnded={isGameEnded}
 					currentPlayer={currentPlayer}
 				/>
-				<Reset onReset={onReset} />
+				<Reset onReset={onReset} ExitGame={ExitGame} />
 			</div >
 		</>
 
@@ -30,6 +35,19 @@ export const Game = () => {
 	const [isDraw, setIsDraw] = useState(false);//ничья
 	const [field, setField] = useState(Array(9).fill(''));
 
+	const [knightEffectActive, setKnightEffectActive] = useState(false);
+	const [dragonEffectActive, setDragonEffectActive] = useState(false);
+
+	//Изменение курсора
+	useEffect(() => {
+		if (currentPlayer === 'X') {
+			document.body.style.cursor = "url('/kursors/Arm_knight_64.ico'), auto"; // Курсор для рыцаря (крестик)
+		} else {
+			document.body.style.cursor = "url('/kursors/Arm_Dracon_64.ico'), auto"; // Курсор для дракона (нолик)
+		}
+	}, [currentPlayer]);
+
+
 	// Обработчик клика по клетке
 	const handleCellClick = (index) => {
 
@@ -39,9 +57,22 @@ export const Game = () => {
 		newField[index] = currentPlayer;
 		setField(newField);
 
+		if (currentPlayer === 'X') {
+			setKnightEffectActive(true); // Включаем эффект для рыцаря
+		} else {
+			setDragonEffectActive(true); // Включаем эффект для дракона
+		}
+
 		if (!checkWin(newField)) {
 			setCurrentPlayer(currentPlayer === 'X' ? '0' : 'X');
 		}
+
+		//  эффект длиться только пол секунды
+		setTimeout(() => {
+			setKnightEffectActive(false);
+			setDragonEffectActive(false);
+		}, 500);
+
 	};
 
 	//проверка результата игры
@@ -87,6 +118,10 @@ export const Game = () => {
 		setIsDraw(false);
 		setField(Array(9).fill(''));
 	};
+	const handleExitGame = () => {
+		alert('По данной кнопке будет выходить новое окно со списком победителей (из БД). В рамках следующего ДЗ');
+	}
+
 
 	return <GameLayout
 		field={field}
@@ -95,6 +130,9 @@ export const Game = () => {
 		currentPlayer={currentPlayer}
 		handleCellClick={handleCellClick}
 		onReset={handleReset}
+		ExitGame={handleExitGame}
+		knightEffectActive={knightEffectActive}
+		dragonEffectActive={dragonEffectActive}
 	/>;
 
 

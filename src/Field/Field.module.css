@@ -32,11 +32,17 @@
 	border: 2px
 		solid
 		#ccc;
-	cursor: pointer;
+	cursor: inherit;
 	font-size: 24px;
 	text-align: center;
 	line-height: 100px;
 }
+.cell:hover {
+	transform: scale(
+		1.2
+	);
+}
+
 .cell_Cross {
 	width: 100px;
 	height: 100px;
@@ -49,7 +55,6 @@
 	border: 2px
 		solid
 		#ccc;
-	cursor: pointer;
 	font-size: 24px;
 	text-align: center;
 	line-height: 100px;
@@ -66,7 +71,7 @@
 	border: 2px
 		solid
 		#ccc;
-	cursor: pointer;
+
 	font-size: 24px;
 	text-align: center;
 	line-height: 100px;

@@ -1,6 +1,6 @@
 import styles from './Field.module.css'
 
-const FieldLayout = ({ field, onCellClick }) => {
+const FieldLayout = ({ field, onCellClick, knightEffectActive, dragonEffectActive }) => {
 
 	return (
 		<>
@@ -28,12 +28,12 @@ const FieldLayout = ({ field, onCellClick }) => {
 
 			</div>
 			<img
-				src="/sprites/Knight1.png"
+				src={knightEffectActive ? '/sprites/Knight3.png' : '/sprites/Knight1.png'}
 				alt="Рыцарь"
 				className={styles.knight}
 			/>
 			<img
-				src="/sprites/dragon.png"
+				src={dragonEffectActive ? '/sprites/dragon-Fire.png' : '/sprites/dragon.png'}
 				alt="Дракон"
 				className={styles.dragon}
 			/>
@@ -41,7 +41,8 @@ const FieldLayout = ({ field, onCellClick }) => {
 	);
 }
 
-export const Field = ({ field, onCellClick }) => {
+export const Field = ({ field, onCellClick, knightEffectActive, dragonEffectActive }) => {
 
-	return <FieldLayout field={field} onCellClick={onCellClick} />
+	return <FieldLayout field={field} onCellClick={onCellClick} knightEffectActive={knightEffectActive}
+		dragonEffectActive={dragonEffectActive} />
 }
