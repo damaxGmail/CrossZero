@@ -21,7 +21,7 @@ const GameLayout = ({
 	return (
 		<>
 			<div className={styles.gameZona}>
-				{/* <ScreenSaver /> */}
+				<ScreenSaver />
 				{/* Окно заполнения данных для регистрации и валидации */}
 				<Field field={field} onCellClick={handleCellClick} knightEffectActive={knightEffectActive}
 					dragonEffectActive={dragonEffectActive} />
