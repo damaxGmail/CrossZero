@@ -1,0 +1,88 @@
+.registrationContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh; /* Занимает всю высоту экрана */
+	background-image: url('/public/TableReg.png'); /* Путь к изображению */
+	background-size: contain; /* Уменьшает изображение, чтобы оно полностью помещалось в контейнер */
+	background-repeat: no-repeat; /* Запрещает повторение фона */
+	background-position: center; /* Центрирует фон */
+	font-family:
+		Arial,
+		sans-serif;
+	color: #fff; /* Цвет текста */
+}
+
+h1 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	padding: 20px;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.7
+	); /* Полупрозрачный фон для формы */
+	border-radius: 10px;
+}
+
+.inputGroup {
+	margin-bottom: 15px;
+}
+
+label {
+	font-size: 1rem;
+	margin-bottom: 5px;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	font-size: 1rem;
+	border: none;
+	border-radius: 5px;
+	background-color: rgba(
+		255,
+		255,
+		255,
+		0.1
+	);
+	color: #fff;
+}
+
+button {
+	padding: 10px;
+	font-size: 1rem;
+	background-color: #ff4500; /* Оранжевый цвет кнопки */
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #ff6347; /* Темно-оранжевый при наведении */
+}
+
+.error {
+	color: red;
+	font-size: 0.9rem;
+	margin-bottom: 10px;
+}
+
+.buttonReg {
+	padding: 10px;
+	font-size: 1rem;
+	background-color: #672108;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}

@@ -1,31 +1,56 @@
-const RegistrationLayout = ({ page }) => {
+import React, { useState } from 'react';
+import styles from './Registration.module.css';
+
+const RegistrationLayout = ({ onStartGame }) => {
+
+	// Если валидация успешна, переходим на страницу игры
+	//onStartGame();
+
 	return (
 		<>
-			<h1>Registration</h1>
+			<div className={styles.registrationContainer}>
+				{/*<h1>Регистрация</h1>
+				 {error && <p className={styles.error}>{error}</p>}
+				<form onSubmit={handleSubmit} className={styles.form}>
+					<div className={styles.inputGroup}>
+						<label>Email:</label>
+						<input
+							type="email"
+							value={username}
+							onChange={(e) => setUsername(e.target.value)}
+							placeholder="Введите email"
+						/>
+					</div>
+					<div className={styles.inputGroup}>
+						<label>Пароль:</label>
+						<input
+							type="password"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+							placeholder="Введите пароль"
+						/>
+					</div>
+					<div className={styles.inputGroup}>
+						<label>Подтвердите пароль:</label>
+						<input
+							type="password"
+							value={confirmPassword}
+							onChange={(e) => setConfirmPassword(e.target.value)}
+							placeholder="Подтвердите пароль"
+						/>
+					</div>
+					<button type="submit"  >Зарегистрироваться</button>
+				</form>*/}
+				<button type="submit" className={styles.buttonReg} onClick={onStartGame}>Зарегистрироваться</button>
+			</div>
 		</>
-		// <div className={styles.screensaver} onClick={handleScreenClick}>
-		// 	{/* Картинка заставки */}
-		// 	<img
-		// 		src="/GameStart_4.png"
-		// 		alt="Game Start"
-		// 		className={`${styles.image} ${isPressed ? styles.pressed : ''}`}
-		// 	/>
-
-		// 	{/* Контейнер для текста внутри заставки */}
-		// 	{showText && (
-		// 		<div className={styles.textContainer}>
-		// 			<h1 className={styles.TextGame}>ice vs flame</h1>
-		// 		</div>
-		// 	)}
-
-		// </div>
 	);
-}
 
-export const Registration = () => {
+};
+
+export const Registration = ({ onStartGame }) => {
 
 	return <RegistrationLayout
-		page={'page'}
-
+		onStartGame={onStartGame}
 	/>;
 }

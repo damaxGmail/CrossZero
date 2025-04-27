@@ -24,7 +24,7 @@ const ScreenSaverLayout = ({ isPressed, showText, handleScreenClick }) => {
 }
 
 
-export const ScreenSaver = () => {
+export const ScreenSaver = ({ onStart }) => {
 	const [showSaver, setShowSaver] = useState(true);
 	const [isPressed, setIsPressed] = useState(false); // Состояние "нажатия"
 	const [showText, setShowText] = useState(true); // Показывать текст или нет
@@ -44,15 +44,9 @@ export const ScreenSaver = () => {
 		// Через короткую задержку закрываем заставку
 		setTimeout(() => {
 			setShowSaver(false);
-
 			// Открываем новое окно для регистрации
-			openRegistrationWindow();
+			onStart();
 		}, 500); // Задержка для эффекта "проседания"
-	};
-
-	// Функция для открытия нового окна регистрации
-	const openRegistrationWindow = () => {
-		alert('Здесь будет открываться окно регистрации');
 	};
 
 	// Если заставка скрыта, не рендерим её
