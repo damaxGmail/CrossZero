@@ -1,16 +1,30 @@
 import styles from './Field.module.css'
 
-const FieldLayout = ({ field }) => {
+const FieldLayout = ({ field, onCellClick }) => {
+
 	return (
 		<>
 
 			<div className={styles.field}>
 
-				{field.map((cell, index) => (
-					<button key={index} className={styles.cell}>
-						{cell}
-					</button>
-				))}
+				{field.map((cell, index) => {
+
+					const cellClass =
+						cell === 'X'
+							? styles.cell_Cross
+							: cell === '0'
+								? styles.cell_Zero
+								: styles.cell;
+
+					return (
+						<button
+							key={index}
+							className={cellClass}
+							onClick={() => onCellClick(index)}
+						>
+						</button>
+					);
+				})}
 
 			</div>
 			<img
@@ -27,7 +41,7 @@ const FieldLayout = ({ field }) => {
 	);
 }
 
-export const Field = ({ field }) => {
+export const Field = ({ field, onCellClick }) => {
 
-	return <FieldLayout field={field} />
+	return <FieldLayout field={field} onCellClick={onCellClick} />
 }

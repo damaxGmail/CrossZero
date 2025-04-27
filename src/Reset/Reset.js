@@ -2,14 +2,14 @@ import styles from './Reset.module.css';
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </link>
 
-const ResetLayout = () => {
+const ResetLayout = ({ onReset }) => {
 	return (
-		<button className={styles.button}> Начать заново </button>
+		<button className={styles.button} onClick={onReset}> Начать заново </button>
 	);
 }
 
-export const Reset = () => {
+export const Reset = ({ onReset }) => {
 
 
-	return <ResetLayout />
+	return <ResetLayout onReset={onReset} />
 }

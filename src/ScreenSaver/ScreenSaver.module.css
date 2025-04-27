@@ -38,12 +38,16 @@
 }
 
 /* Текст "Лед" */
-.iceText {
+.TextGame {
 	font-family:
 		'MedievalSharp',
 		cursive;
 	font-size: 4rem;
-	color: blue;
+	color: rgb(
+		255,
+		60,
+		0
+	);
 	text-shadow: 2px
 		2px
 		4px
@@ -54,36 +58,7 @@
 			0.5
 		);
 	position: absolute; /* Абсолютное позиционирование */
-	top: 18%;
-	left: 50%; /* Центрирование по горизонтали */
-	transform: translateX(
-		-50%
-	); /* Корректное центрирование по горизонтали */
-	opacity: 0; /* Начальное состояние — прозрачный */
-	animation: fadeIn
-		1s
-		ease-in
-		forwards; /* Анимация появления */
-}
-
-/* Текст "Пламя" */
-.fireText {
-	font-family:
-		'MedievalSharp',
-		cursive;
-	font-size: 4rem;
-	color: red;
-	text-shadow: 2px
-		2px
-		4px
-		rgba(
-			0,
-			0,
-			0,
-			0.5
-		);
-	position: absolute; /* Абсолютное позиционирование */
-	bottom: 18%;
+	top: 11%;
 	left: 50%; /* Центрирование по горизонтали */
 	transform: translateX(
 		-50%

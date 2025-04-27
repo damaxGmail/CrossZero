@@ -6,7 +6,7 @@ const ScreenSaverLayout = ({ isPressed, showText, handleScreenClick, buttonPress
 		<div className={styles.screensaver} onClick={handleScreenClick}>
 			{/* Картинка заставки */}
 			<img
-				src="/GameStart.jpg"
+				src="/GameStart_4.png"
 				alt="Game Start"
 				className={`${styles.image} ${isPressed ? styles.pressed : ''}`}
 			/>
@@ -14,8 +14,7 @@ const ScreenSaverLayout = ({ isPressed, showText, handleScreenClick, buttonPress
 			{/* Контейнер для текста внутри заставки */}
 			{showText && (
 				<div className={styles.textContainer}>
-					<h1 className={styles.iceText}>Лед</h1>
-					<h1 className={styles.fireText}>Пламя</h1>
+					<h1 className={styles.TextGame}>ice vs flame</h1>
 				</div>
 			)}
 
