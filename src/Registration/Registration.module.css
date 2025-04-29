@@ -1,13 +1,16 @@
 .registrationContainer {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
 	height: 100vh; /* Занимает всю высоту экрана */
 	background-image: url('/public/TableReg.png'); /* Путь к изображению */
 	background-size: contain; /* Уменьшает изображение, чтобы оно полностью помещалось в контейнер */
 	background-repeat: no-repeat; /* Запрещает повторение фона */
 	background-position: center; /* Центрирует фон */
+
 	font-family:
 		Arial,
 		sans-serif;
@@ -68,7 +71,7 @@ button {
 }
 
 button:hover {
-	background-color: #ff6347; /* Темно-оранжевый при наведении */
+	background-color: #38312f;
 }
 
 .error {
@@ -78,6 +81,13 @@ button:hover {
 }
 
 .buttonReg {
+	position: absolute; /* Абсолютное позиционирование */
+	top: 85%; /* Например, 60% от верхнего края */
+	left: 50%; /* 50% от левого края */
+	transform: translate(
+		-50%,
+		-50%
+	);
 	padding: 10px;
 	font-size: 1rem;
 	background-color: #672108;
@@ -85,4 +95,46 @@ button:hover {
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+
+	width: 255px;
+	height: 60px;
+}
+
+.fildRegistration {
+	position: absolute; /* Абсолютное позиционирование относительно родительского контейнера */
+	top: 53%; /* Положение по вертикали (например, 50% от верхнего края) */
+	left: 50%; /* Положение по горизонтали (например, 50% от левого края) */
+	transform: translate(
+		-50%,
+		-50%
+	); /* Центрирование относительно указанных координат */
+
+	width: 60%; /* Ширина обертки (например, 60% от ширины экрана) */
+	max-width: 410px; /* Максимальная ширина для больших экранов */
+	height: 60%;
+	max-height: 700px;
+
+	padding: 20px; /* Внутренний отступ */
+	/*background-color: rgba(
+		0,
+		0,
+		0,
+		0.7
+	);*/ /* Полупрозрачный фон для имитации цветного поля */
+
+	border-radius: 10px; /* Закругление углов */
+	box-shadow: 0
+		4px
+		8px
+		rgba(
+			0,
+			0,
+			0,
+			0.5
+		); /* Тень для эффекта объема */
+
+	display: flex; /* Флексбокс для удобного расположения дочерних элементов */
+	flex-direction: column; /* Элементы располагаются вертикально */
+	align-items: center; /* Выравнивание по центру по горизонтали */
+	justify-content: center; /* Выравнивание по центру по вертикали */
 }

@@ -6,16 +6,18 @@ const RegistrationLayout = ({ onStartGame, stopMusic }) => {
 
 	const handleRegister = () => {
 		// Здесь можно добавить валидацию данных, если нужно
-		stopMusic();
 
+		stopMusic();
 		onStartGame(); // Переход к игре
 	};
 
 	return (
 		<>
 			<div className={styles.registrationContainer}>
-				{/*<h1>Регистрация</h1>
-				 {error && <p className={styles.error}>{error}</p>}
+				<div className={styles.fildRegistration}>
+
+					<h1>Регистрация</h1>
+					{/* {error && <p className={styles.error}>{error}</p>}
 				<form onSubmit={handleSubmit} className={styles.form}>
 					<div className={styles.inputGroup}>
 						<label>Email:</label>
@@ -45,8 +47,9 @@ const RegistrationLayout = ({ onStartGame, stopMusic }) => {
 						/>
 					</div>
 					<button type="submit"  >Зарегистрироваться</button>
-				</form>*/}
-				<button type="submit" className={styles.buttonReg} onClick={handleRegister}>Зарегистрироваться</button>
+				</form> */}
+					<button type="submit" className={styles.buttonReg} onClick={handleRegister}>Зарегистрироваться</button>
+				</div>
 			</div>
 		</>
 	);
@@ -57,15 +60,18 @@ export const Registration = ({ onStartGame }) => {
 
 	useEffect(() => {
 
-		const currentAudio = playSound(null, 'Registration');
-		setAudio(currentAudio);
+		// -!!!-
+		// const currentAudio = playSound(null, 'Registration');
+		// setAudio(currentAudio);
 
-		return () => {
-			if (currentAudio) {
-				currentAudio.pause();
-				currentAudio.currentTime = 0;
-			}
-		};
+		// return () => {
+		// 	if (currentAudio) {
+		// 		currentAudio.pause();
+		// 		currentAudio.currentTime = 0;
+		// 	}
+		// };
+
+
 	}, []);
 
 	const stopMusic = () => {
