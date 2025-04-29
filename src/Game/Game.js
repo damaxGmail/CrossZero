@@ -1,4 +1,4 @@
-import { ScreenSaver } from '../ScreenSaver/ScreenSaver'
+
 import { Reset } from '../Reset/Reset'
 import { Field } from '../Field/Field'
 import { Information } from '../Information/Information'
@@ -21,7 +21,6 @@ const GameLayout = ({
 	return (
 		<>
 			<div className={styles.gameZona}>
-				<ScreenSaver />
 				{/* Окно заполнения данных для регистрации и валидации */}
 				<Field field={field} onCellClick={handleCellClick} knightEffectActive={knightEffectActive}
 					dragonEffectActive={dragonEffectActive} />

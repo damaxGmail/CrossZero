@@ -16,7 +16,7 @@ export const playSound = (player, event) => {
 		case 'draw':
 			soundFile = '/sounds/WinDraw.mp3';
 			break;
-		case 'ScreenSaver':
+		case 'Registration':
 			soundFile = '/sounds/screensaver.mp3';
 			break;
 		default:
@@ -27,4 +27,5 @@ export const playSound = (player, event) => {
 	// Воспроизводим звук
 	const audio = new Audio(soundFile);
 	audio.play().catch((e) => console.error("Не удалось проиграть звук:", e));
+	return audio;
 };

@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './ScreenSaver.module.css';
-import { playSound } from '../Effect/Effect';
 
 const ScreenSaverLayout = ({ isPressed, showText, handleScreenClick }) => {
 	return (
@@ -25,38 +24,23 @@ const ScreenSaverLayout = ({ isPressed, showText, handleScreenClick }) => {
 
 
 export const ScreenSaver = ({ onStart }) => {
-	const [showSaver, setShowSaver] = useState(true);
+
 	const [isPressed, setIsPressed] = useState(false); // Состояние "нажатия"
 	const [showText, setShowText] = useState(true); // Показывать текст или нет
 
-	useEffect(() => {
-		if (showSaver) {
-			playSound(null, 'ScreenSaver'); // Проигрываем музыку заставки
-		}
-	}, [showSaver]);
-
-
 	// Обработчик клика по заставке
 	const handleScreenClick = () => {
-		// Изменяем состояние на "нажатие"
+		// Изменяем состояние на "нажатие" (для эффектов в css)
 		setIsPressed(true);
-
-		// Через короткую задержку закрываем заставку
-		setTimeout(() => {
-			setShowSaver(false);
-			// Открываем новое окно для регистрации
-			onStart();
-		}, 500); // Задержка для эффекта "проседания"
+		onStart();
 	};
-
-	// Если заставка скрыта, не рендерим её
-	if (!showSaver) return null;
 
 	return (
 		<ScreenSaverLayout
 			isPressed={isPressed}
 			showText={showText}
 			handleScreenClick={handleScreenClick}
+
 		/>
 	)
 };
