@@ -70,16 +70,16 @@ export const Registration = ({ onStartGame }) => {
 
 	useEffect(() => {
 
-		// -!!!-
-		// const currentAudio = playSound(null, 'Registration');
-		// setAudio(currentAudio);
 
-		// return () => {
-		// 	if (currentAudio) {
-		// 		currentAudio.pause();
-		// 		currentAudio.currentTime = 0;
-		// 	}
-		// };
+		const currentAudio = playSound(null, 'Registration');
+		setAudio(currentAudio);
+
+		return () => {
+			if (currentAudio) {
+				currentAudio.pause();
+				currentAudio.currentTime = 0;
+			}
+		};
 
 
 	}, []);

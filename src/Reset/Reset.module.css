@@ -18,7 +18,7 @@
 	font-size: 12px; /* Размер шрифта */
 	text-transform: uppercase; /* Все буквы заглавные */
 	text-align: center; /* Текст по центру */
-	line-height: 40px; /* Выравнивание текста по вертикали */
+	line-height: 20px; /* Выравнивание текста по вертикали */
 	cursor: pointer; /* Курсор в виде указателя */
 	box-shadow: 0px
 		4px
