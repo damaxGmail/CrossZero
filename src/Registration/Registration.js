@@ -17,38 +17,48 @@ const RegistrationLayout = ({ onStartGame, stopMusic }) => {
 				<div className={styles.fildRegistration}>
 
 					<h1>Регистрация</h1>
-					{/* {error && <p className={styles.error}>{error}</p>}
-				<form onSubmit={handleSubmit} className={styles.form}>
-					<div className={styles.inputGroup}>
-						<label>Email:</label>
-						<input
-							type="email"
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
-							placeholder="Введите email"
-						/>
-					</div>
-					<div className={styles.inputGroup}>
-						<label>Пароль:</label>
-						<input
-							type="password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							placeholder="Введите пароль"
-						/>
-					</div>
-					<div className={styles.inputGroup}>
-						<label>Подтвердите пароль:</label>
-						<input
-							type="password"
-							value={confirmPassword}
-							onChange={(e) => setConfirmPassword(e.target.value)}
-							placeholder="Подтвердите пароль"
-						/>
-					</div>
-					<button type="submit"  >Зарегистрироваться</button>
-				</form> */}
-					<button type="submit" className={styles.buttonReg} onClick={handleRegister}>Зарегистрироваться</button>
+					<form className={styles.form}>
+						{/* Поле Login */}
+						<div className={styles.inputGroup}>
+							<label>Login:</label>
+							<input
+								type="text"
+								placeholder="Введите Ваш Логин"
+								className={styles.input}
+							/>
+						</div>
+						{/* Поле Email */}
+						<div className={styles.inputGroup}>
+							<label>Email:</label>
+							<input
+								type="email"
+								placeholder="Введите email"
+								className={styles.input}
+							/>
+						</div>
+
+						{/* Поле Пароль */}
+						<div className={styles.inputGroup}>
+							<label>Пароль:</label>
+							<input
+								type="password"
+								placeholder="Введите пароль"
+								className={styles.input}
+							/>
+						</div>
+
+						{/* Поле Подтверждение пароля */}
+						<div className={styles.inputGroup}>
+							<label>Подтвердите пароль:</label>
+							<input
+								type="password"
+								placeholder="Подтвердите пароль"
+								className={styles.input}
+							/>
+						</div>
+
+						<button type="submit" className={styles.buttonReg} onClick={handleRegister}>Зарегистрироваться</button>
+					</form>
 				</div>
 			</div>
 		</>

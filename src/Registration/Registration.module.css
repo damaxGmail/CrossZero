@@ -17,9 +17,51 @@
 	color: #fff; /* Цвет текста */
 }
 
-h1 {
+.fildRegistration {
+	position: absolute; /* Абсолютное позиционирование относительно родительского контейнера */
+	top: 53%; /* Положение по вертикали (например, 50% от верхнего края) */
+	left: 50%; /* Положение по горизонтали (например, 50% от левого края) */
+	transform: translate(
+		-50%,
+		-50%
+	); /* Центрирование относительно указанных координат */
+
+	width: 60%; /* Ширина обертки (например, 60% от ширины экрана) */
+	max-width: 410px; /* Максимальная ширина для больших экранов */
+	height: 60%;
+	max-height: 700px;
+
+	padding: 20px; /* Внутренний отступ */
+	/*background-color: rgba(
+		0,
+		0,
+		0,
+		0.7
+	);*/ /* Полупрозрачный фон для имитации цветного поля */
+
+	border-radius: 10px; /* Закругление углов */
+	box-shadow: 0
+		4px
+		8px
+		rgba(
+			0,
+			0,
+			0,
+			0.5
+		); /* Тень для эффекта объема */
+
+	display: flex; /* Флексбокс для удобного расположения дочерних элементов */
+	flex-direction: column; /* Элементы располагаются вертикально */
+	align-items: center; /* Выравнивание по центру по горизонтали */
+	justify-content: flex-start; /* Выравнивание по центру по вертикали */
+}
+
+.fildRegistration
+	h1 {
 	font-size: 2rem;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
+	text-align: center;
+	color: #fff; /* Цвет текста */
 }
 
 .form {
@@ -34,15 +76,19 @@ h1 {
 		0.7
 	); /* Полупрозрачный фон для формы */
 	border-radius: 10px;
+	gap: 5px; /* Отступ между элементами формы */
 }
 
 .inputGroup {
-	margin-bottom: 15px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 5px; /* Отступ между меткой и полем ввода */
 }
-
-label {
+.inputGroup
+	label {
 	font-size: 1rem;
-	margin-bottom: 5px;
+	color: #fff; /* Цвет текста */
 }
 
 input {
@@ -58,6 +104,17 @@ input {
 		0.1
 	);
 	color: #fff;
+	outline: none; /* Убираем рамку при фокусе */
+	box-sizing: border-box;
+}
+
+.input::placeholder {
+	color: rgba(
+		255,
+		255,
+		255,
+		0.5
+	); /* Цвет плейсхолдера */
 }
 
 button {
@@ -100,41 +157,11 @@ button:hover {
 	height: 60px;
 }
 
-.fildRegistration {
-	position: absolute; /* Абсолютное позиционирование относительно родительского контейнера */
-	top: 53%; /* Положение по вертикали (например, 50% от верхнего края) */
-	left: 50%; /* Положение по горизонтали (например, 50% от левого края) */
-	transform: translate(
-		-50%,
-		-50%
-	); /* Центрирование относительно указанных координат */
+.buttonReg:hover {
+	background-color: #ff6347; /* Темно-оранжевый при наведении */
+}
 
-	width: 60%; /* Ширина обертки (например, 60% от ширины экрана) */
-	max-width: 410px; /* Максимальная ширина для больших экранов */
-	height: 60%;
-	max-height: 700px;
-
-	padding: 20px; /* Внутренний отступ */
-	/*background-color: rgba(
-		0,
-		0,
-		0,
-		0.7
-	);*/ /* Полупрозрачный фон для имитации цветного поля */
-
-	border-radius: 10px; /* Закругление углов */
-	box-shadow: 0
-		4px
-		8px
-		rgba(
-			0,
-			0,
-			0,
-			0.5
-		); /* Тень для эффекта объема */
-
-	display: flex; /* Флексбокс для удобного расположения дочерних элементов */
-	flex-direction: column; /* Элементы располагаются вертикально */
-	align-items: center; /* Выравнивание по центру по горизонтали */
-	justify-content: center; /* Выравнивание по центру по вертикали */
+.buttonReg:disabled {
+	background-color: #888; /* Цвет кнопки при блокировке */
+	cursor: not-allowed;
 }
