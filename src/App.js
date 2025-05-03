@@ -27,8 +27,8 @@ const AppLayout = ({
 }
 
 export const App = () => {
-	//const [page, setPage] = useState('screensaver'); // Текущая страница
-	const [page, setPage] = useState('registration2'); // временно
+	const [page, setPage] = useState('screensaver'); // Текущая страница
+	//const [page, setPage] = useState('registration2'); // временно
 
 	// Функция для перехода на страницу регистрации
 	const goToRegistration = () => {
