@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/CrossZero/static/css/main.a7f2be97.css",
+    "main.js": "/CrossZero/static/js/main.8fc8e5ff.js",
+    "static/media/TableReg.png": "/CrossZero/static/media/TableReg.2b027da5b0f5764a0327.png",
+    "static/media/Fon.jpg": "/CrossZero/static/media/Fon.27669eacec306e9f3bec.jpg",
+    "static/media/Krestik.jpg": "/CrossZero/static/media/Krestik.bbe04fb0494768ea452c.jpg",
+    "static/media/OneKlet.jpg": "/CrossZero/static/media/OneKlet.8049d59d70cbb6c0d3c8.jpg",
+    "static/media/Nolik.jpg": "/CrossZero/static/media/Nolik.2336bb028cd6e2f1d24b.jpg",
+    "index.html": "/CrossZero/index.html",
+    "main.a7f2be97.css.map": "/CrossZero/static/css/main.a7f2be97.css.map",
+    "main.8fc8e5ff.js.map": "/CrossZero/static/js/main.8fc8e5ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a7f2be97.css",
+    "static/js/main.8fc8e5ff.js"
+  ]
+}
